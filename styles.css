@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('Image/Background.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    top: 0;
+    left: 0;
+    padding: 30px 50px;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo {
+    position: relative;
+    font-size: 40px;
+    color: #e5e7e9;
+    padding: 0 20px;
+    user-select: none;
+}
+
+.main-nav ul li {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 30px;
+    margin-top: 15px;
+}
+
+.main-nav a {
+    position: relative;
+    text-decoration: none;
+    color: #e5e7e9;
+    font-weight: 500;
+}
+
+.main-nav ul li::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background-color: #e5e7e9;
+    border-radius: 15px;
+    right: 0;
+    bottom: -5px;
+    transition: 0.5s ease;
+}
+
+.main-nav ul li:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.main-nav .log-in {
+    margin-left: 30px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #e5e7e9;
+    background: transparent;
+    padding: 6px 15px;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid #e5e7e9;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.main-nav .log-in:hover {
+    background-color: #e5e7e9;
+    color: #050505;
+}
+
+.wrapper {
+    position: relative;
+    margin-top: 50px;
+    background: transparent;
+    height: 440px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #e5e7e9;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    transition: height 0.5s;
+    transform: scale(0);
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+
+.wrapper.close{
+    transform: scale(1);
+}
+
+.wrapper.active {
+    height: 540px;
+}
+
+.wrapper .icon-close {
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    right: 0;
+    top: 0;
+    font-size: 35px;
+    text-align: center;
+    background-color: #e5e7e9;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.wrapper .popup {
+    width: 100%;
+    padding: 30px;
+}
+
+.wrapper .popup.login {
+    transition: transform 0.4s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .popup.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .popup.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .popup.register {
+    transition: transform 0.4s ease;
+    transform: translateX(0);
+}
+.popup h2 {
+    text-align: center;
+    color: #e5e7e9;
+    font-size: 30px;
+}
+
+.popup form {
+    width: 100%;
+}
+
+.popup .input-box {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin: 30px 0;
+    border-bottom: 2px solid #e5e7e9;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #e5e7e9;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 0 35px 0 5px;
+}
+
+.input-box input::placeholder {
+    color: #e5e7e9;
+}
+
+.input-box label {
+    position: absolute;
+    font-size: 13px;
+    font-weight: 500;
+    color: #e5e7e9;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.5s ease;
+}
+
+.input-box input:valid~label,
+.input-box input:focus~label {
+    top: -5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 5px;
+    top: 7px;
+    font-size: 20px;
+    color: #e5e7e9;
+}
+
+.additional {
+    display: flex;
+    justify-content: space-between;
+    margin: -15px 0 15px;
+    color: #e5e7e9;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.additional input {
+    accent-color: #e5e7e9;
+    margin-right: 5px;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+}
+
+.additional a {
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #e5e7e9;
+}
+
+.additional a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 5px 0;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+.login-register {
+    text-align: center;
+    margin: 10px 0 15px;
+}
+
+.login-register p {
+    color: #e5e7e9;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.login-register p a {
+    text-decoration: none;
+    color: #e5e7e9;
+    padding-left: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
